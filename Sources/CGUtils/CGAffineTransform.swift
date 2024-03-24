@@ -1,5 +1,5 @@
-import Foundation
 import CoreGraphics
+import Foundation
 import QuartzCore
 
 public extension CGAffineTransform {
@@ -18,7 +18,7 @@ public extension CGAffineTransform {
       y: fitRect.origin.y - sourceRect.origin.y * yRatio
     ).scaledBy(x: xRatio, y: yRatio)
   }
-  
+
   /// Returns a CGAffineTransform that scales and centers the source rectangle to fit within the target rectangle while maintaining the aspect ratio.
   ///
   /// - Parameters:
@@ -30,7 +30,7 @@ public extension CGAffineTransform {
     let fitTargetRect = CGRect(origin: .zero, size: fitSize)
     return transform(by: sourceRect, aspectFitInRect: fitTargetRect)
   }
-  
+
   /// Returns a CGAffineTransform that transforms the source rectangle to fit the fill target rectangle using the aspect fill mode.
   ///
   /// - Parameters:
@@ -46,7 +46,7 @@ public extension CGAffineTransform {
       y: fillRect.origin.y - sourceRect.origin.y * yRatio
     ).scaledBy(x: xRatio, y: yRatio)
   }
-  
+
   /// Returns a CGAffineTransform that scales and centers the source rectangle to fit the fill target rectangle.
   ///
   /// - Parameters:
@@ -73,9 +73,9 @@ public extension CGAffineTransform {
 
   /**
    Returns the scale factor along the x-axis of the affine transform.
-   
+
    The scale factor is calculated by taking the square root of the product of the `a` and `c` components of the affine transform matrix.
-   
+
    - Returns: The scale factor along the x-axis.
    */
   var scaleX: CGFloat {
@@ -91,7 +91,7 @@ public extension CGAffineTransform {
 
   /**
    Returns the scale factors of the affine transform as a CGPoint.
-   
+
    - Returns: A CGPoint representing the scale factors of the affine transform.
    */
   var scaleXY: CGPoint {
@@ -110,7 +110,7 @@ public extension CGAffineTransform {
 
   /**
    Returns the translation of the affine transform as a CGPoint.
-   
+
    - Returns: The translation of the affine transform as a CGPoint.
    */
   var translation: CGPoint {
@@ -137,4 +137,3 @@ public extension CATransform3D {
     transform.m34 = 1.0 / -cameraDistance
   }
 }
-

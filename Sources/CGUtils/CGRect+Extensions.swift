@@ -1,8 +1,7 @@
-import Foundation
 import CoreGraphics
+import Foundation
 
 public extension CGRect {
-  
   /// Calculates the CGRect that fits within the given rect while maintaining the aspect ratio of the original CGRect.
   ///
   /// - Parameters:
@@ -29,7 +28,6 @@ public extension CGRect {
     return CGRect(origin: origin, size: size)
   }
 
-  
   /// Returns a new CGRect with the specified aspect ratio.
   ///
   /// - Parameter aspectRatio: The desired aspect ratio for the new CGRect.
@@ -64,21 +62,21 @@ public extension CGRect {
   func rect(with aspectRatio: CGSize, insideRect: CGRect) -> CGRect {
     let width = insideRect.width
     let height = insideRect.height
-    
+
     let targetWidth = aspectRatio.width
     let targetHeight = aspectRatio.height
-    
+
     let widthRatio = width / targetWidth
     let heightRatio = height / targetHeight
-    
+
     let ratio = min(widthRatio, heightRatio)
-    
+
     let newWidth = targetWidth * ratio
     let newHeight = targetHeight * ratio
-    
+
     let newX = insideRect.origin.x + (width - newWidth) / 2
     let newY = insideRect.origin.y + (height - newHeight) / 2
-    
+
     return CGRect(x: newX, y: newY, width: newWidth, height: newHeight)
   }
 }

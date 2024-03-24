@@ -1,5 +1,5 @@
-import Foundation
 import CoreGraphics
+import Foundation
 
 /// An extension for CGSize providing utility methods.
 public extension CGSize {
